@@ -7,7 +7,7 @@
 #include <sstream>
 using namespace std;
 
-long animal::counter = 1;
+long animal::counter = 0;
 
 animal::animal() {
     id = counter++;
@@ -15,27 +15,44 @@ animal::animal() {
     age = 0;
     x = 0;
     y = 0;
-};
+}
 
 animal::animal(int Age, double X, double Y) {
     age = Age;
     x = X;
     y = Y;
-};
+}
 void animal::move(double X, double Y) {
     x = X;
     y = Y;
-};
+}
+
+animal::animal(const animal& ani) {
+    age = ani.age;
+    id = ani.id;
+    x = ani.x;
+    y = ani.y;
+    alive = ani.alive;
+}
+
 animal::~animal(){
     cout<<"destroy Animal."<<endl;
 }
 
 double animal::get_x() const {
     return x;
-};
+}
 
 double animal::get_y() const {
     return y;
+}
+
+bool animal::get_alive() const {
+    return alive;
+}
+
+int animal::get_age() const {
+    return age;
 }
 
 void animal::sleep() {

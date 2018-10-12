@@ -29,6 +29,9 @@ class animal {
 
         double get_x() const;
         double get_y() const;
+        bool get_alive() const;
+        long get_id() const;
+        int get_age() const;
 
 };
 
