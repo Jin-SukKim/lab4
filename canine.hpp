@@ -7,7 +7,7 @@
 #include "animal.hpp"
 
 class canine : public animal{
-    friend ostream& operator<<(ostream& os, const bird& b);
+    friend ostream& operator<<(ostream& os, const canine& b);
 
     public:
         canine();
