@@ -49,14 +49,15 @@ int canine::get_age() const {
     return animal::get_age();
 }
 
+long canine::get_id() const {
+    return animal::get_id();
+}
+
 ostream& operator<<(ostream& os, const canine& c){
-    if(c.get_alive())
-        os<<"The Bird is alive."<<endl;
-    else
-        os<<"The Bird is dead."<<endl;
-    os<<"The Bird's ID is: "<<c.get_id()<<endl;
-    os<<"The Bird's age is: "<<c.get_age()<<endl;
-    os<<"The Bird's position is ("<<c.get_x()<<","<<c.get_y()<<")"<<endl;
+    os << (c.get_alive() ? "The Canine is alive" : "The Canine is dead") << endl;
+    os<<"The Canine's ID is: "<<c.get_id()<<endl;
+    os<<"The Canine's age is: "<<c.get_age()<<endl;
+    os<<"The Canine's position is ("<<c.get_x()<<","<<c.get_y()<<")"<<endl;
 
 
     return os;

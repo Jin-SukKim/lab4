@@ -18,6 +18,7 @@ animal::animal() {
 }
 
 animal::animal(int Age, double X, double Y) {
+    id =counter++;
     age = Age;
     x = X;
     y = Y;
@@ -36,7 +37,7 @@ animal::animal(const animal& ani) {
 }
 
 animal::~animal(){
-    cout<<"destroy Animal."<<endl;
+    cout<<"destroy Animal"<<endl;
 }
 
 double animal::get_x() const {
@@ -55,16 +56,20 @@ int animal::get_age() const {
     return age;
 }
 
+long animal::get_id() const {
+    return id;
+}
+
 void animal::sleep() {
-    cout<<"Animal is sleeping."<<endl;
+    cout<<"Animal is sleeping"<<endl;
 }
 
 void animal::eat() {
-    cout<<"Animal is eating."<<endl;
+    cout<<"Animal is eating"<<endl;
 }
 
 ostream& operator<<(ostream& os, const animal& an){
-    os << (an.alive ? "The Animal is alive." : "The Animal is dead.") << endl;
+    os << (an.alive ? "The Animal is alive" : "The Animal is dead") << endl;
     os<<"The Animal's ID is: "<<an.id<<endl;
     os<<"The Animal's age is: "<<an.age<<endl;
     os<<"The Animal's position on the ground is ("<<an.x<<","<<an.y<<")"<<endl;

@@ -18,7 +18,7 @@ void bird::move(double x, double y, double z) {
 }
 
 bird::~bird() {
-    cout<<"Destroying bird"<<endl;
+    cout<<"Destroying Bird"<<endl;
 }
 
 bird::bird(const bird& b):animal(b) {
@@ -53,11 +53,12 @@ int bird::get_age() const {
     return animal::get_age();
 }
 
+long bird::get_id() const {
+    return animal::get_id();
+}
+
 ostream& operator<<(ostream& os, const bird& b){
-    if(b.get_alive())
-        os<<"The Bird is alive."<<endl;
-    else
-        os<<"The Bird is dead."<<endl;
+    os << (b.get_alive() ? "The Bird is alive" : "The Bird is dead") << endl;
     os<<"The Bird's ID is: "<<b.get_id()<<endl;
     os<<"The Bird's age is: "<<b.get_age()<<endl;
     os<<"The Bird's position is ("<<b.get_x()<<","<<b.get_y()<<","<<b.get_z()<<")"<<endl;
