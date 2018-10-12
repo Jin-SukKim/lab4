@@ -17,8 +17,20 @@ void bird::move(double x, double y, double z) {
     height = z;
 }
 
+bird::~bird() {
+    cout<<"Destroying bird"<<endl;
+}
+
 bird::bird(const bird& b):animal(b) {
     height = b.get_z();
+}
+
+void bird::eat() {
+    cout<<"Bird is eating"<<endl;
+}
+
+void bird::sleep() {
+    cout<<"Bird is sleeping"<<endl;
 }
 
 double bird::get_z() const {
@@ -39,19 +51,6 @@ bool bird::get_alive() const {
 
 int bird::get_age() const {
     return animal::get_age();
-}
-
-
-bird::~bird() {
-    cout<<"destroying bird"<<endl;
-}
-
-void bird::eat() {
-    cout<<"Bird is eating"<<endl;
-}
-
-void bird::sleep() {
-    cout<<"Bird is sleeping"<<endl;
 }
 
 ostream& operator<<(ostream& os, const bird& b){
